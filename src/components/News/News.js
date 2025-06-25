@@ -10,6 +10,8 @@ import { header } from "../../config/config";
 import { endpointPath } from "../../config/api";
 import { Container, Header, card } from "./index";
 
+console.log('ENV API KEY:', process.env.REACT_APP_API_KEY);
+
 function News(props) {
   const { newscategory, country } = props;
   const [articles, setArticles] = useState([]);
@@ -26,12 +28,15 @@ function News(props) {
   const updatenews = async () => {
     try {
       const response = await axios.get(endpointPath(country, category));
-      setLoading(true);
       const parsedData = response.data;
-      setArticles(parsedData.articles);
+      console.log('Full API Response:', parsedData);
+      console.log('Articles received:', parsedData.articles?.length || 0);
+      console.log('First article:', parsedData.articles?.[0]);
+      setArticles(parsedData.articles || []);
       setLoading(false);
     } catch (error) {
       console.error(error);
+      setLoading(false);
     }
   };
 
@@ -49,6 +54,7 @@ function News(props) {
           <Header>{header(capitaLize(category))}</Header>
           <Container>
             <Row>
+              {console.log('Rendering articles:', articles.length)}
               {articles.map((element) => {
                 return (
                   <Col sm={12} md={6} lg={4} xl={3} style={card} key={uuidv4()}>

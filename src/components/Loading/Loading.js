@@ -1,10 +1,11 @@
 import React from "react";
-import { SpinnerContainer, LoadingCircle } from "./index";
+import { SpinnerContainer, LoadingCircle, LoadingText } from "./index";
 
 function Loading() {
   return (
     <SpinnerContainer>
       <LoadingCircle />
+      <LoadingText>Loading News</LoadingText>
     </SpinnerContainer>
   );
 }
