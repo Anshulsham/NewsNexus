@@ -1,0 +1,182 @@
+.navbar {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 15px 30px !important;
+  font-size: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.nav-brand {
+  font-size: 24px !important;
+  margin-left: 0 !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.nav {
+  margin-left: 20px !important;
+  gap: 5px !important;
+}
+
+.nav-item {
+  margin: 0 8px !important;
+  padding: 10px 16px !important;
+  border-radius: 25px !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.nav-item::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+  transition: left 0.5s ease !important;
+}
+
+.nav-item:hover::before {
+  left: 100% !important;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.close-btn {
+  color: rgba(255, 255, 255, 0.8) !important;
+  cursor: pointer !important;
+  margin-inline-end: 10px !important;
+  transition: all 0.3s ease !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+}
+
+.close-btn:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: rotate(90deg) !important;
+}
+
+.search-form {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.form-input {
+  border-radius: 25px !important;
+  padding: 12px 20px !important;
+  font-size: 16px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  outline: none !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(10px) !important;
+  min-width: 250px !important;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.logo {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.search-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 25px !important;
+  padding: 12px 24px !important;
+  border: none !important;
+  font-size: 16px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.search-btn::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+  transition: left 0.5s ease !important;
+}
+
+.search-btn:hover::before {
+  left: 100% !important;
+}
+
+.search-btn:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6) !important;
+}
+
+.search-btn:disabled {
+  background: rgba(255, 255, 255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px !important;
+  }
+  
+  .nav-brand {
+    font-size: 20px !important;
+  }
+  
+  .form-input {
+    min-width: 200px !important;
+  }
+  
+  .search-btn {
+    padding: 10px 20px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-input {
+    min-width: 150px !important;
+  }
+  
+  .search-btn {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+  }
+}
